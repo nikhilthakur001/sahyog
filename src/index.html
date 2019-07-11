@@ -24,7 +24,6 @@
     <link href="vendors/pace-progress/css/pace.min.css" rel="stylesheet">
     <!-- Global site tag (gtag.js) - Google Analytics-->
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
-    <script src="src/js/login.js"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
 
@@ -94,5 +93,16 @@
     <script src="node_modules/pace-progress/pace.min.js"></script>
     <script src="node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
     <script src="node_modules/@coreui/coreui/dist/js/coreui.min.js"></script>
+    <script>
+      function onLogin() {
+          $("#loginErr").empty();
+          if($("#username").val()=="admin" && $("#password").val()=="admin") {
+              window.location.href = "/forms/about.html"
+              localStorage.setItem("loggedIn", true);
+          } else {
+              $("#loginErr").append("Wrong username/password");
+          }
+      }
+    </script>
   </body>
 </html>
